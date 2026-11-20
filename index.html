@@ -8,23 +8,44 @@
   <style>
     *{box-sizing:border-box}
     body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(150deg,#fbf9f7,#f0eee9);font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;color:#263340}
-    main{width:min(100%,440px);background:#fff;border:1px solid #eee8e1;border-radius:26px;padding:36px 27px;box-shadow:0 15px 48px #3333330b;text-align:center}
-    .icon{font-size:52px;line-height:1.2;margin-bottom:14px}
+    main{width:min(100%,540px);background:#fff;border:1px solid #eee8e1;border-radius:26px;padding:36px 27px;box-shadow:0 15px 48px #3333330b;text-align:center}
+    .icon{font-size:48px;line-height:1.2;margin-bottom:14px}
     h1{font-size:27px;margin:0 0 12px}
-    p{color:#6e7882;font-size:15px;line-height:1.75;margin:0 0 30px}
-    a{display:block;background:#364f72;color:white;text-decoration:none;font-size:17px;font-weight:700;padding:17px 18px;border-radius:15px;transition:background .2s,transform .2s}
-    a:hover{background:#273e5d;transform:translateY(-2px)}
-    a:focus-visible{outline:3px solid #f2b95b;outline-offset:3px}
-    small{display:block;margin-top:24px;color:#98a0a7;font-size:12px}
+    .intro{color:#6e7882;font-size:15px;line-height:1.75;margin:0 0 28px}
+    .tools{display:grid;gap:14px;text-align:left}
+    .tool{display:flex;align-items:center;gap:14px;padding:18px;border-radius:17px;text-decoration:none;color:inherit;border:1px solid var(--edge);background:var(--bg);transition:transform .2s,box-shadow .2s}
+    .tool:hover{transform:translateY(-2px);box-shadow:0 7px 20px #33333310}
+    .tool:focus-visible{outline:3px solid #f2b95b;outline-offset:3px}
+    .weather{--bg:#f0f5fb;--edge:#dce6f1;--accent:#364f72}
+    .cocoa{--bg:#faf3eb;--edge:#eddfd1;--accent:#79503a}
+    .tool-icon{display:grid;place-items:center;flex:0 0 48px;height:48px;border-radius:13px;background:#ffffffb0;font-size:27px}
+    .info{flex:1;min-width:0}
+    h2{font-size:17px;color:var(--accent);margin:0 0 5px}
+    .desc{font-size:13px;line-height:1.65;color:#626b73;margin:0}
+    .arrow{color:var(--accent);font-size:23px;flex-shrink:0}
+    footer{margin-top:28px;color:#757d84;font-size:12px}
+    @media(max-width:360px){body{padding:12px}main{padding:27px 16px}.tool{padding:13px;gap:10px}.tool-icon{flex-basis:40px;height:40px}}
+    @media(prefers-reduced-motion:reduce){.tool{transition:none}.tool:hover{transform:none}}
   </style>
 </head>
 <body>
   <main>
-    <div class="icon" aria-hidden="true">🌤️👚</div>
+    <div class="icon" aria-hidden="true">🧰</div>
     <h1>我的生活小工具</h1>
-    <p>每天看氣溫，輕鬆選擇適合的穿搭。<br>使用 26 度穿衣法，快速計算保暖度。</p>
-    <a href="./每日穿搭計算器.html">開啟每日穿搭計算器 →</a>
-    <small>每日穿搭 · 簡單生活</small>
+    <p class="intro">讓日常生活更簡單。<br>選擇你想使用的小工具。</p>
+    <nav class="tools" aria-label="生活小工具">
+      <a class="tool weather" href="./每日穿搭計算器.html">
+        <span class="tool-icon" aria-hidden="true">🌤️</span>
+        <div class="info"><h2>每日穿搭計算器</h2><p class="desc">依照氣溫與 26 度穿衣法，快速計算保暖度。</p></div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="tool cocoa" href="./cocoa.html">
+        <span class="tool-icon" aria-hidden="true">☕</span>
+        <div class="info"><h2>可可牛奶配方計算機</h2><p class="desc">八款可可粉 × 鮮奶／奶粉 × 四種甜味劑，打造專屬微甜配方。</p></div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </nav>
+    <footer>生活小工具 · 簡單生活</footer>
   </main>
 </body>
 </html>
